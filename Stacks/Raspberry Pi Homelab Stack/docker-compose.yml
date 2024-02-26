@@ -105,6 +105,25 @@ services:
       - avb
     volumes:
       - grafanavol:/var/lib/grafana
+    links:
+     - influxdb
+  
+  influxdb:
+    container_name: InfluxDB
+    hostname: influxdb
+    image: influxdb:latest
+    restart: always
+    ports:
+      - 8086:8086
+    networks:
+      - avb
+    volumes:
+      - influxdbvol:/var/lib/influxdb
+      - influxdbvol:/etc/influxdb2
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      - servicename
 
 volumes:
   portainer:
@@ -114,6 +133,7 @@ volumes:
   nextcloudvol:
   tsvol:
   grafanavol:
+  influxdbvol:
 
 networks:
   avb: #Bridge Network
