@@ -78,12 +78,29 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
+  teamspeak:
+    container_name: Teamspeak
+    hostname: teamspeak
+    image: teamspeak:latest
+    restart: always
+    ports:
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
+    networks:
+      - avb
+    volumes:
+      - tsvol:/var/ts3server
+    environment:
+      - TS3SERVER_LICENSE=accept
+
 volumes:
   portainer:
   phpmyadminvol:
   mariadbvol:
   homepagevol:
   nextcloudvol:
+  tsvol:
 
 networks:
   avb: #Bridge Network
