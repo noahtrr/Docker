@@ -13,6 +13,8 @@ services:
       - volumename:/containerpath
     environment:
       - name=value
+    depends_on:
+      - servicename
 
 volumes:
   volumename:
