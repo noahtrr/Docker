@@ -1,0 +1,94 @@
+version: "3.8"
+services:
+
+  portainer:
+    container_name: Portainer
+    hostname: portainer
+    image: portainer/portainer-ee:latest
+    restart: always
+    ports:
+      - 443:9443
+    networks:
+      - avb
+    volumes:
+      - portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  phpmyadmin:
+    container_name: phpMyAdmin
+    hostname: phpmyadmin
+    image: lscr.io/linuxserver/phpmyadmin:latest
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - avb
+    volumes:
+      - phpmyadminvol:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - PMA_ARBITRARY=1
+
+  mariadb:
+    container_name: MariaDB
+    hostname: mariadb
+    image: lscr.io/linuxserver/mariadb:latest
+    restart: always
+    ports:
+      - 3006:3006
+    networks:
+      - avb
+    volumes:
+      - mariadbvol:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - MYSQL_ROOT_PASSWORD=CHANGETHIS
+
+  homepage:
+    container_name: Homepage
+    hostname: homepage
+    image: ghcr.io/gethomepage/homepage:latest
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - avb
+    volumes:
+      - homepagevol:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  nextcloud:
+    container_name: Nextcloud
+    hostname: nextcloud
+    image: lscr.io/linuxserver/nextcloud:latest
+    restart: always
+    ports:
+      - 444:443
+    networks:
+      - avb
+    volumes:
+      - nextcloudvol:/config
+      - nextcloudvol:/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+
+volumes:
+  portainer:
+  phpmyadminvol:
+  mariadbvol:
+  homepagevol:
+  nextcloudvol:
+
+networks:
+  avb: #Bridge Network
+    driver: bridge
+  avh: #Host Network 
+    driver: host
+  avn: #Isolation Network
+    driver: none
