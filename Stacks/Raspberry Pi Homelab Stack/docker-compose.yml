@@ -122,8 +122,6 @@ services:
       - influxdbvol:/etc/influxdb2
     security_opt:
       - no-new-privileges:true
-    depends_on:
-      - servicename
 
 volumes:
   portainer:
