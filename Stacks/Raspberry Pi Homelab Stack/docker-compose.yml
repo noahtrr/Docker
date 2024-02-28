@@ -1,3 +1,17 @@
+# // Overview of this file
+# // Following Services and what they do:
+
+#1 Portainer for managing Docker
+#2 phpMyAdmin for managing mysql/mariadb databases
+#3 mariadb for storing data
+#4 homepage for collecting the hosted services and making them easily accessible
+#5 nextcloud for storing files like pictures, documents, etc.
+#6 teamspeak for providing a voice chat server running with minimal resources
+#7 grafana for Visualising data in Dashboards
+#8 influxdb for collecting data to provide to grafana
+#9 pihole to block ads, log network data and provide a pxe connection
+#10 netbootxyz to provide a pxe boot server
+
 version: "3.8"
 services:
 
