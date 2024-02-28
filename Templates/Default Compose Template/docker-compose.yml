@@ -23,7 +23,5 @@ volumes:
 networks:
   avb: #Bridge Network
     driver: bridge
-  avh: #Host Network 
-    driver: host
   avn: #Isolation Network
     driver: none
