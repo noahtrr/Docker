@@ -143,16 +143,15 @@ services:
     image: pihole/pihole:latest #Image from DockerHub
     restart: always
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
+      - 53:53/tcp
+      - 53:53/udp
       #- "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      - "80:80/tcp"
+      - 80:80/tcp
     networks:
-      - avh
       - avb
     volumes:
       - piholevol:/etc/pihole
-      - piholevol:/etc/dnsmasq.d
+      - dnsmasqvol:/etc/dnsmasq.d
     environment:
       - TZ=Europe/Berlin
     #cap_add:
@@ -191,12 +190,11 @@ volumes:
   grafanavol:
   influxdbvol:
   piholevol:
+  dnsmasqvol:
   netbootvol:
 
 networks:
   avb: #Bridge Network
     driver: bridge
-  avh: #Host Network 
-    driver: host
   avn: #Isolation Network
     driver: none
