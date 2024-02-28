@@ -81,7 +81,7 @@ services:
   teamspeak:
     container_name: Teamspeak
     hostname: teamspeak
-    image: teamspeak:latest
+    image: ertagh/teamspeak3-server:arm64v8-latest-box
     restart: unless-stopped
     ports:
       - 9987:9987/udp
