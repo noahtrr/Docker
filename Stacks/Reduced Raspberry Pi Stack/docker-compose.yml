@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+
+  pihole:
+    container_name: PiHole
+    hostname: pihole
+    image: pihole/pihole:latest #Image from DockerHub
+    restart: always
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      #- "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - 80:80/tcp
+    networks:
+      - avb
+    volumes:
+      - piholevol:/etc/pihole
+      - dnsmasqvol:/etc/dnsmasq.d
+    environment:
+      - TZ=Europe/Berlin
+    #cap_add:
+     # - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+
+  homepage:
+    container_name: Homepage
+    hostname: homepage
+    image: ghcr.io/gethomepage/homepage:latest #Image from GitHub
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - avb
+    volumes:
+      - homepagevol:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - PATHTOBG:/app/public/images
+      - PATHTOICO:/app/public/icons
+
+volumes:
+  piholevol:
+  dnsmasqvol:
+  homepagevol:
+
+networks:
+  avb:
+    driver: bridge
