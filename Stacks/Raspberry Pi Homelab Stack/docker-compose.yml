@@ -74,6 +74,8 @@ services:
     volumes:
       - homepagevol:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $HOME/Docker/Images/Backgrounds:/app/public/images
+      - $HOME/Docker/Images/Icons:/app/public/icons
 
   nextcloud:
     container_name: Nextcloud
