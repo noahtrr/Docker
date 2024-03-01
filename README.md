@@ -2,13 +2,17 @@
 ```
 git clone https://github.com/Lierexa/Docker.git
 ```
-#2 Execute the setup script located in /Docker/Configs/Raspberry Pi Setup Script/ with: 
+#2 Navigate to the Directory with:
+```
+cd Docker/Configs/'Raspberry Pi Setup Script'/
+```
+#3 Execute the setup script with: 
 ```
 sudo sh ./raspi-config.sh
 ```
-#3 Go and Deploy the Stacks / Containers you want
+#4 Go and Deploy the Stacks / Containers you want
 
-#4 To Deploy a compose file do:
+#5 To Deploy a compose file do:
 ```
 docker compose up -d
 ```
