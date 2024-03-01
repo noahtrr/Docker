@@ -12,4 +12,6 @@ sudo sh ./get-docker.sh
 
 sudo usermod -aG docker $USER
 
+git clone https://github.com/Lierexa/Docker.git
+
 exit
