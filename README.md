@@ -4,7 +4,7 @@ git clone https://github.com/Lierexa/Docker.git
 ```
 #2 Navigate to the Directory with:
 ```
-cd Docker/Configs/Raspberry Pi Setup Script/
+cd Docker/Configs/'Raspberry Pi Setup Script'/
 ```
 #3 Execute the setup script with: 
 ```
