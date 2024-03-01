@@ -16,10 +16,10 @@ sudo usermod -aG docker $USER
 
 git clone https://github.com/Lierexa/Docker.git
 
-
-
 sudo cp $home/Docker/Configs/'Raspberry Pi Setup Script'/resolved.conf /etc/systemd/resolved.conf
 
-echo "You Should reboot your Device for the needed changes to take effect"
+echo "The Device will reboot in 5 Seconds\n Press CTRL+C to Abort"
 
-exit
+sleep 5
+
+reboot
