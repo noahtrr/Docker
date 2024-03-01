@@ -1,5 +1,7 @@
 #! /bin/sh
 
+home="$(getent passwd $SUDO_USER | cut -d: -f6)"
+
 apt update
 
 apt upgrade -y
@@ -14,7 +16,9 @@ sudo usermod -aG docker $USER
 
 git clone https://github.com/Lierexa/Docker.git
 
-sudo cp $HOME/Docker/Configs/'Raspberry Pi Setup Script'/resolved.conf /etc/systemd/resolved.conf
+
+
+sudo cp $home/Docker/Configs/'Raspberry Pi Setup Script'/resolved.conf /etc/systemd/resolved.conf
 
 echo "You Should reboot your Device for the needed changes to take effect"
 
