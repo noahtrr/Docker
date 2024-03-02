@@ -8,7 +8,7 @@ cd Docker/Configs/'Raspberry Pi Setup Script'/
 ```
 #3 Execute the setup script with: 
 ```
-sudo sh ./raspi-config.sh
+sudo sh ./rasp-config.sh
 ```
 #4 Go and Deploy the Stacks / Containers you want
 
