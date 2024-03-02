@@ -21,7 +21,7 @@ services:
     image: portainer/portainer-ee:latest #Image from DockerHub
     restart: always
     ports:
-      - 443:9443
+      - 445:9443
     networks:
       - avb
     volumes:
@@ -34,7 +34,7 @@ services:
     image: lscr.io/linuxserver/phpmyadmin:latest #Image from LinuxServer.io
     restart: always
     ports:
-      - 81:80
+      - 83:80
     networks:
       - avb
     volumes:
@@ -148,7 +148,7 @@ services:
       - 53:53/tcp
       - 53:53/udp
       #- "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      - 80:80/tcp
+      - 82:80/tcp
     networks:
       - avb
     volumes:
@@ -182,6 +182,21 @@ services:
       - NGINX_PORT= 8080
       - WEB_APP_PORT= 3020
 
+  nginxproxymanager:
+    container_name: Nginx Proxy Manager
+    hostname: nginxproxymanager
+    image: jc21/nginx-proxy-manager:latest
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 81:81
+    networks:
+      - avb
+    volumes:
+      - nginxproxyvol:/data
+      - nginxproxyvol:/etc/letsencrypt
+
 volumes:
   portainer:
   phpmyadminvol:
@@ -194,6 +209,7 @@ volumes:
   piholevol:
   dnsmasqvol:
   netbootvol:
+  nginxproxyvol:
 
 networks:
   avb: #Bridge Network
