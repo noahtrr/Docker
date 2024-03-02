@@ -182,21 +182,6 @@ services:
       - NGINX_PORT= 8080
       - WEB_APP_PORT= 3020
 
-  nginxproxymanager:
-    container_name: Nginx-Proxy-Manager
-    hostname: nginxproxymanager
-    image: jc21/nginx-proxy-manager:latest
-    restart: always
-    ports:
-      - 80:80
-      - 443:443
-      - 81:81
-    networks:
-      - avb
-    volumes:
-      - nginxproxyvol:/data
-      - nginxproxyvol:/etc/letsencrypt
-
 volumes:
   portainer:
   phpmyadminvol:
@@ -209,7 +194,6 @@ volumes:
   piholevol:
   dnsmasqvol:
   netbootvol:
-  nginxproxyvol:
 
 networks:
   avb: #Bridge Network
