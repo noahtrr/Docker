@@ -257,20 +257,28 @@ services:
       - servicename
 
   netbootxyz:
-    container_name: NetbootXYZ # NOT DONE
+    container_name: NetbootXYZ
     hostname: netbootxyz
-    image: imagename:tag
+    image: lscr.io/linuxserver/netbootxyz:latest
     restart: always
     ports:
-      - 80:80
+      - 3010:3000
+      - 69:69/udp
+      - 95:80
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - netbootvol:/config
+      - netbootvol:/assets
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - MENU_VERSION=
+      - PORT_RANGE=30000:30010
+      - SUBFOLDER=/
+      - NGINX_PORT=95
+      - WEB_APP_PORT=3010
 
   grafana:
     container_name: Grafana # NOT DONE
