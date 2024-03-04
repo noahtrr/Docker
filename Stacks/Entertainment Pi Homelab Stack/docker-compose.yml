@@ -32,18 +32,19 @@ services:
   pihole:
     container_name: PiHole
     hostname: pihole
-    image: imagename:tag
+    image: pihole/pihole:latest
     restart: always
     ports:
+      - 53:53
+      - 53:53/udp
       - 80:80
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - piholevol:/etc/pihole
+      - dnsmasqvol:/etc/dnsmasq.d
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - TZ=Europe/Berlin
 
   plex:
     container_name: Plex
