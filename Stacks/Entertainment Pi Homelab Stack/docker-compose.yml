@@ -209,18 +209,19 @@ services:
   nextcloud:
     container_name: Nextcloud
     hostname: nextcloud
-    image: imagename:tag
+    image: lscr.io/linuxserver/nextcloud:latest
     restart: always
     ports:
-      - 80:80
+      - 443:443
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - nextcloudvol:/config
+      - nextcloudvol:/data
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
 
   phpmyadmin:
     container_name: phpMyAdmin
