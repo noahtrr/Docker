@@ -18,7 +18,7 @@ git clone https://github.com/Lierexa/Docker.git
 
 sudo cp $home/Docker/Configs/'Raspberry Pi Setup Script'/resolved.conf /etc/systemd/resolved.conf
 
-echo "The Device will reboot in 5 Seconds\n Press CTRL+C to Abort"
+echo "The device will reboot in 5 seconds\n Press CTRL+C to abort"
 
 sleep 5
 
