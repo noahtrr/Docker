@@ -294,25 +294,25 @@ services:
      - influxdb
 
 volumes:
-portainervol:
-homepagevol:
-piholevol:
-dnsmasqvol:
-plexvol:
-jackettvol:
-sonarrvol:
-radarrvol:
-qbittorrentvol:
-bazarrvol:
-overseerrvol:
-doplarrvol:
-mariadbvol:
-influxdbvol:
-nextcloudvol:
-phpmyadminvol:
-teamspeakvol:
-netbootvol:
-grafanavol:
+  portainervol:
+  homepagevol:
+  piholevol:
+  dnsmasqvol:
+  plexvol:
+  jackettvol:
+  sonarrvol:
+  radarrvol:
+  qbittorrentvol:
+  bazarrvol:
+  overseerrvol:
+  doplarrvol:
+  mariadbvol:
+  influxdbvol:
+  nextcloudvol:
+  phpmyadminvol:
+  teamspeakvol:
+  netbootvol:
+  grafanavol:
 
 networks:
   avb: #Bridge Network
