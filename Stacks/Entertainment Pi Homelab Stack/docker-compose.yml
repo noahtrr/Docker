@@ -1,9 +1,74 @@
 version: "3.8"
 services:
 
+  portainer:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
 
+  homepage:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  pihole:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
 
 volumes:
+portainervol:
+homepagevol:
+piholevol:
+dnsmasqvol:
+plexvol:
+jackettvol:
+sonarrvol:
+radarrvol:
+qbittorrentvol:
+bazarrvol:
+overseerrvol:
+doplarrvol:
+mariadbvol:
+influxdbvol:
+nextcloudvol:
+phpmyadminvol:
+teamspeakvol:
+netbootvol:
+grafanavol:
 
 networks:
   avb: #Bridge Network
