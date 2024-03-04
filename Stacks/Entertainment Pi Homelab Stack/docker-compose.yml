@@ -2,8 +2,8 @@ version: "3.8"
 services:
 
   portainer:
-    container_name: containername
-    hostname: containernetname
+    container_name: Portainer
+    hostname: portainer
     image: imagename:tag
     restart: always
     ports:
@@ -18,8 +18,8 @@ services:
       - servicename
 
   homepage:
-    container_name: containername
-    hostname: containernetname
+    container_name: Homepage
+    hostname: homepage
     image: imagename:tag
     restart: always
     ports:
@@ -34,8 +34,8 @@ services:
       - servicename
 
   pihole:
-    container_name: containername
-    hostname: containernetname
+    container_name: PiHole
+    hostname: pihole
     image: imagename:tag
     restart: always
     ports:
@@ -50,8 +50,8 @@ services:
       - servicename
 
   plex:
-    container_name: containername
-    hostname: containernetname
+    container_name: Plex
+    hostname: plex
     image: imagename:tag
     restart: always
     ports:
@@ -66,8 +66,8 @@ services:
       - servicename
 
   jackett:
-    container_name: containername
-    hostname: containernetname
+    container_name: Jackett
+    hostname: jackett
     image: imagename:tag
     restart: always
     ports:
@@ -82,8 +82,8 @@ services:
       - servicename
 
   sonarr:
-    container_name: containername
-    hostname: containernetname
+    container_name: Sonarr
+    hostname: sonarr
     image: imagename:tag
     restart: always
     ports:
@@ -98,8 +98,8 @@ services:
       - servicename
 
   radarr:
-    container_name: containername
-    hostname: containernetname
+    container_name: Radarr
+    hostname: radarr
     image: imagename:tag
     restart: always
     ports:
@@ -114,8 +114,8 @@ services:
       - servicename
 
   qbittorrent:
-    container_name: containername
-    hostname: containernetname
+    container_name: qBittorrent
+    hostname: qbittorrent
     image: imagename:tag
     restart: always
     ports:
@@ -130,8 +130,8 @@ services:
       - servicename
 
   bazarr:
-    container_name: containername
-    hostname: containernetname
+    container_name: Bazarr
+    hostname: bazarr
     image: imagename:tag
     restart: always
     ports:
@@ -146,8 +146,8 @@ services:
       - servicename
 
   overseerr:
-    container_name: containername
-    hostname: containernetname
+    container_name: Overseerr
+    hostname: overseerr
     image: imagename:tag
     restart: always
     ports:
@@ -162,8 +162,8 @@ services:
       - servicename
 
   doplarr:
-    container_name: containername
-    hostname: containernetname
+    container_name: Doplarr
+    hostname: doplarr
     image: imagename:tag
     restart: always
     ports:
@@ -178,8 +178,8 @@ services:
       - servicename
 
   mariadb:
-    container_name: containername
-    hostname: containernetname
+    container_name: MariaDB
+    hostname: mariadb
     image: imagename:tag
     restart: always
     ports:
@@ -194,8 +194,8 @@ services:
       - servicename
 
   influxdb:
-    container_name: containername
-    hostname: containernetname
+    container_name: InfluxDB
+    hostname: influxdb
     image: imagename:tag
     restart: always
     ports:
@@ -210,8 +210,8 @@ services:
       - servicename
 
   nextcloud:
-    container_name: containername
-    hostname: containernetname
+    container_name: Nextcloud
+    hostname: nextcloud
     image: imagename:tag
     restart: always
     ports:
@@ -226,8 +226,8 @@ services:
       - servicename
 
   phpmyadmin:
-    container_name: containername
-    hostname: containernetname
+    container_name: phpMyAdmin
+    hostname: phpmyadmin
     image: imagename:tag
     restart: always
     ports:
@@ -242,8 +242,8 @@ services:
       - servicename
 
   teamspeak:
-    container_name: containername
-    hostname: containernetname
+    container_name: Teamspeak
+    hostname: teamspeak
     image: imagename:tag
     restart: always
     ports:
@@ -258,8 +258,8 @@ services:
       - servicename
 
   netbootxyz:
-    container_name: containername
-    hostname: containernetname
+    container_name: NetbootXYZ
+    hostname: netbootxyz
     image: imagename:tag
     restart: always
     ports:
@@ -274,8 +274,8 @@ services:
       - servicename
 
   grafana:
-    container_name: containername
-    hostname: containernetname
+    container_name: Grafana
+    hostname: grafana
     image: imagename:tag
     restart: always
     ports:
