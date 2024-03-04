@@ -49,66 +49,74 @@ services:
   plex:
     container_name: Plex
     hostname: plex
-    image: imagename:tag
+    image: lscr.io/linuxserver/plex:latest
     restart: always
-    ports:
-      - 80:80
     networks:
-      - specifiednetwork
+      - avb
+    network_mode: host
     volumes:
-      - volumename:/containerpath
+      - plexvol:/config
+      - plexvol:/tv
+      - plexvol:/movies
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - VERSION=docker
 
   jackett:
     container_name: Jackett
     hostname: jackett
-    image: imagename:tag
+    image: lscr.io/linuxserver/jackett:latest
     restart: always
     ports:
-      - 80:80
+      - 9117:9117
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - jackettvol:/config
+      - jackettvol:/downloads
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - AUTO_UPDATE=true
 
   sonarr:
     container_name: Sonarr
     hostname: sonarr
-    image: imagename:tag
+    image: lscr.io/linuxserver/sonarr:latest
     restart: always
     ports:
-      - 80:80
+      - 8989:8989
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - sonarrvol:/config
+      - plexvol:/tv
+      - jackettvol:/downloads
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
 
   radarr:
     container_name: Radarr
     hostname: radarr
-    image: imagename:tag
+    image: lscr.io/linuxserver/radarr:latest
     restart: always
     ports:
-      - 80:80
+      - 7878:7878
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - radarrvol:/config
+      - plexvol:/movies
+      - jackettvol:/downloads
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
 
   qbittorrent:
     container_name: qBittorrent
