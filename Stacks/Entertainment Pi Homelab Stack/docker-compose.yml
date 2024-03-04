@@ -226,18 +226,19 @@ services:
   phpmyadmin:
     container_name: phpMyAdmin
     hostname: phpmyadmin
-    image: imagename:tag
+    image: lscr.io/linuxserver/phpmyadmin:latest
     restart: always
     ports:
-      - 80:80
+      - 90:80
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - phpmyadminvol:/config
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - PMA_ARBITRARY=1
 
   teamspeak:
     container_name: Teamspeak
