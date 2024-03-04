@@ -191,7 +191,7 @@ services:
       - MYSQL_ROOT_PASSWORD=CHANGETHIS!
 
   influxdb:
-    container_name: InfluxDB
+    container_name: InfluxDB # NOT DONE
     hostname: influxdb
     image: imagename:tag
     restart: always
@@ -241,7 +241,7 @@ services:
       - PMA_ARBITRARY=1
 
   teamspeak:
-    container_name: Teamspeak
+    container_name: Teamspeak # NOT DONE
     hostname: teamspeak
     image: imagename:tag
     restart: always
@@ -257,7 +257,7 @@ services:
       - servicename
 
   netbootxyz:
-    container_name: NetbootXYZ
+    container_name: NetbootXYZ # NOT DONE
     hostname: netbootxyz
     image: imagename:tag
     restart: always
@@ -273,7 +273,7 @@ services:
       - servicename
 
   grafana:
-    container_name: Grafana
+    container_name: Grafana # NOT DONE
     hostname: grafana
     image: imagename:tag
     restart: always
