@@ -34,6 +34,7 @@ services:
       - servicename
 
 volumes:
+examplevol:
 
 networks:
   avb: #Bridge Network
