@@ -75,7 +75,7 @@ services:
       - avb
     volumes:
       - jackettvol:/config
-      - jackettvol:/downloads
+      - qbittorrentvol:/downloads
     environment:
       - PUID=1000
       - PGID=1000
@@ -94,7 +94,7 @@ services:
     volumes:
       - sonarrvol:/config
       - plexvol:/tv
-      - jackettvol:/downloads
+      - qbittorrentvol:/downloads
     environment:
       - PUID=1000
       - PGID=1000
@@ -112,7 +112,7 @@ services:
     volumes:
       - radarrvol:/config
       - plexvol:/movies
-      - jackettvol:/downloads
+      - qbittorrentvol:/downloads
     environment:
       - PUID=1000
       - PGID=1000
@@ -121,66 +121,57 @@ services:
   qbittorrent:
     container_name: qBittorrent
     hostname: qbittorrent
-    image: imagename:tag
+    image: lscr.io/linuxserver/qbittorrent:latest
     restart: always
     ports:
-      - 80:80
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
     networks:
       - specifiednetwork
     volumes:
-      - volumename:/containerpath
+      - qbittorrentvol:/config
+      - qbittorrentvol:/downloads
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
 
   bazarr:
     container_name: Bazarr
     hostname: bazarr
-    image: imagename:tag
+    image: lscr.io/linuxserver/bazarr:latest
     restart: always
     ports:
-      - 80:80
+      - 6767:6767
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - bazarrvol:/config
+      - plexvol:/tv
+      - plexvol:/movies
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
 
   overseerr:
     container_name: Overseerr
     hostname: overseerr
-    image: imagename:tag
+    image: lscr.io/linuxserver/overseerr:latest
     restart: always
     ports:
-      - 80:80
+      - 5055:5055
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - overseerrvol:/config
     environment:
-      - name=value
-    depends_on:
-      - servicename
-
-  doplarr:
-    container_name: Doplarr
-    hostname: doplarr
-    image: imagename:tag
-    restart: always
-    ports:
-      - 80:80
-    networks:
-      - specifiednetwork
-    volumes:
-      - volumename:/containerpath
-    environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
 
   mariadb:
     container_name: MariaDB
