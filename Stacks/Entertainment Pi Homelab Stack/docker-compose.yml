@@ -49,6 +49,246 @@ services:
     depends_on:
       - servicename
 
+  plex:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  jackett:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  sonarr:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  radarr:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  qbittorrent:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  bazarr:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  overseerr:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  doplarr:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  mariadb:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  influxdb:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  nextcloud:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  phpmyadmin:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  teamspeak:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  netbootxyz:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
+  grafana:
+    container_name: containername
+    hostname: containernetname
+    image: imagename:tag
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - specifiednetwork
+    volumes:
+      - volumename:/containerpath
+    environment:
+      - name=value
+    depends_on:
+      - servicename
+
 volumes:
 portainervol:
 homepagevol:
