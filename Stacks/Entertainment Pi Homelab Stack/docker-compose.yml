@@ -191,20 +191,19 @@ services:
       - MYSQL_ROOT_PASSWORD=CHANGETHIS!
 
   influxdb:
-    container_name: InfluxDB # NOT DONE
+    container_name: InfluxDB
     hostname: influxdb
-    image: imagename:tag
+    image: influxdb:latest
     restart: always
     ports:
-      - 80:80
+      - 8086:8086
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
-    environment:
-      - name=value
-    depends_on:
-      - servicename
+      - influxdbvol:/var/lib/influxdb
+      - influxdbvol:/etc/influxdb2
+    security_opt:
+      - no-new-privileges:true
 
   nextcloud:
     container_name: Nextcloud
@@ -241,20 +240,20 @@ services:
       - PMA_ARBITRARY=1
 
   teamspeak:
-    container_name: Teamspeak # NOT DONE
+    container_name: Teamspeak
     hostname: teamspeak
-    image: imagename:tag
+    image: ertagh/teamspeak3-server:arm64v8-latest-box
     restart: always
     ports:
-      - 80:80
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - teamspeakvol:/var/ts3server
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - TS3SERVER_LICENSE=accept
 
   netbootxyz:
     container_name: NetbootXYZ
@@ -281,20 +280,18 @@ services:
       - WEB_APP_PORT=3010
 
   grafana:
-    container_name: Grafana # NOT DONE
+    container_name: Grafana
     hostname: grafana
-    image: imagename:tag
+    image: grafana/grafana-enterprise
     restart: always
     ports:
-      - 80:80
+      - 3020:3000
     networks:
       - specifiednetwork
     volumes:
-      - volumename:/containerpath
-    environment:
-      - name=value
-    depends_on:
-      - servicename
+      - grafanavol:/var/lib/grafana
+    links:
+     - influxdb
 
 volumes:
 portainervol:
