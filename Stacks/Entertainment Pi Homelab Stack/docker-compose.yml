@@ -51,8 +51,6 @@ services:
     hostname: plex
     image: lscr.io/linuxserver/plex:latest
     restart: always
-    networks:
-      - avb
     network_mode: host
     volumes:
       - plexvol:/config
@@ -128,7 +126,7 @@ services:
       - 6881:6881
       - 6881:6881/udp
     networks:
-      - specifiednetwork
+      - avb
     volumes:
       - qbittorrentvol:/config
       - qbittorrentvol:/downloads
@@ -287,7 +285,7 @@ services:
     ports:
       - 3020:3000
     networks:
-      - specifiednetwork
+      - avb
     volumes:
       - grafanavol:/var/lib/grafana
     links:
