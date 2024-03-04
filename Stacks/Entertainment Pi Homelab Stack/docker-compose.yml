@@ -176,18 +176,19 @@ services:
   mariadb:
     container_name: MariaDB
     hostname: mariadb
-    image: imagename:tag
+    image: lscr.io/linuxserver/mariadb:latest
     restart: always
     ports:
-      - 80:80
+      - 3306:3306
     networks:
-      - specifiednetwork
+      - avb
     volumes:
-      - volumename:/containerpath
+      - mariadbvol:/config
     environment:
-      - name=value
-    depends_on:
-      - servicename
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - MYSQL_ROOT_PASSWORD=CHANGETHIS!
 
   influxdb:
     container_name: InfluxDB
