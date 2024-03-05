@@ -14,7 +14,7 @@ sudo sh ./rasp-setup.sh
 #4 Execute the following command and reconnect after
 
 ```
-curl -fsSL https://get.docker.com -o get-docker.sh
+sudo usermod -aG docker $USER
 ```
 
 #5 Go and Deploy the Stacks / Containers you want
