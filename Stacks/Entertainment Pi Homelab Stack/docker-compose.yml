@@ -68,7 +68,7 @@ services:
     image: lscr.io/linuxserver/prowlarr:latest
     restart: always
     ports:
-      - - 9696:9696
+      - 9696:9696
     networks:
       - avb
     volumes:
