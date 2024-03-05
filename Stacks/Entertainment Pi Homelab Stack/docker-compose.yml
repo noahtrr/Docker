@@ -306,8 +306,6 @@ services:
       - PGID=1000
       - UMASK_SET=022
       - DEEMIX_SINGLE_USER=true
-    depends_on:
-      - servicename
 
 volumes:
   portainervol:
