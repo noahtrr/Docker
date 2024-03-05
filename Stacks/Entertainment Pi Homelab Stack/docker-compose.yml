@@ -289,6 +289,26 @@ services:
     links:
      - influxdb
 
+  deemix:
+    container_name: Deemix
+    hostname: deemix
+    image: registry.gitlab.com/bockiii/deemix-docker
+    restart: always
+    ports:
+      - 6595:6595
+    networks:
+      - avb
+    volumes:
+      - deemixvol:/config
+      - plexvol:/music
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+      - DEEMIX_SINGLE_USER=true
+    depends_on:
+      - servicename
+
 volumes:
   portainervol:
   homepagevol:
@@ -309,6 +329,7 @@ volumes:
   teamspeakvol:
   netbootvol:
   grafanavol:
+  deemixvol:
 
 networks:
   avb: #Bridge Network
