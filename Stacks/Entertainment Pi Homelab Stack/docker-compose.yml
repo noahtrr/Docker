@@ -62,23 +62,21 @@ services:
       - TZ=Europe/Berlin
       - VERSION=docker
 
-  jackett:
-    container_name: Jackett
-    hostname: jackett
-    image: lscr.io/linuxserver/jackett:latest
+  prowlarr:
+    container_name: Prowlarr
+    hostname: prowlarr
+    image: lscr.io/linuxserver/prowlarr:latest
     restart: always
     ports:
-      - 9117:9117
+      - - 9696:9696
     networks:
       - avb
     volumes:
-      - jackettvol:/config
-      - qbittorrentvol:/downloads
+      - prowlarrvol:/config
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-      - AUTO_UPDATE=true
 
   sonarr:
     container_name: Sonarr
@@ -297,7 +295,7 @@ volumes:
   piholevol:
   dnsmasqvol:
   plexvol:
-  jackettvol:
+  prowlarrvol:
   sonarrvol:
   radarrvol:
   qbittorrentvol:
