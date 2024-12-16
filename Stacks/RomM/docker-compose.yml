@@ -1,0 +1,85 @@
+name: RomM-Stack
+services:
+  RomM:
+    image: rommapp/romm:latest
+    container_name: RomM
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST=RomM-DB
+      - DB_NAME=romm
+      - DB_USER=romm-user
+      - DB_PASSWD=
+      - ROMM_AUTH_SECRET_KEY=
+      - IGDB_CLIENT_ID=
+      - IGDB_CLIENT_SECRET=
+      - DISABLE_DOWNLOAD_ENDPOINT_AUTH=false
+    volumes:
+      - romm_resources:/romm/resources
+      - romm_redis_data:/redis-data
+      - /opt/romm/library:/romm/library:z
+      - /opt/romm/assets:/romm/assets:z
+      - /opt/romm/config:/romm/config
+    networks:
+      - RomM-Network
+    restart: always
+    depends_on:
+      RomM-DB:
+        condition: service_healthy
+        restart: true
+
+  RomM-DB:
+    image: mariadb:latest
+    container_name: RomM-DB
+    environment:
+      - MARIADB_DATABASE=romm
+      - MARIADB_USER=romm-user
+      - MARIADB_PASSWORD=
+      - MARIADB_ROOT_PASSWORD=
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - RomM-Network
+    restart: always
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 30s
+      start_interval: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  RomM-Comm:
+    image: idiosync000/romm-comm:latest
+    container_name: RomM-Comm
+    environment:
+      - TOKEN= #Bot token
+      - GUILD= #Guild token
+      - API_URL= http://RomM:8080
+      - USER= #RomM User
+      - PASS= #RomM Password
+      - DOMAIN= #RomM Domain
+      - SYNC_RATE=3600
+      - REQUESTS_ENABLED=TRUE
+      - IGDB_CLIENT_ID=
+      - IGDB_CLIENT_SECRET=
+      - ENABLE_USER_MANAGER=TRUE
+      - AUTO_REGISTER_ROLE_ID=
+      - UPDATE_VOICE_NAMES=false
+      - CHANNEL_ID=
+      - SHOW_API_SUCCESS=true
+      - CACHE_TTL=3900
+      - API_TIMEOUT=10
+    volumes:
+      - /opt/romm-sync/data:/app/data
+    networks:
+      - RomM-Network
+    restart: always
+
+networks:
+  RomM-Network:
+
+volumes:
+  mysql_data:
+  romm_resources:
+  romm_redis_data:name: RomM-Suite
