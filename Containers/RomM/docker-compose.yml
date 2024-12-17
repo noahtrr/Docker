@@ -1,0 +1,58 @@
+name: RomM-Stack
+services:
+  RomM:
+    image: rommapp/romm:latest
+    container_name: RomM
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST=RomM-DB
+      - DB_NAME=romm
+      - DB_USER=romm-user
+      - DB_PASSWD=
+      - ROMM_AUTH_SECRET_KEY=
+      - IGDB_CLIENT_ID=
+      - IGDB_CLIENT_SECRET=
+      - DISABLE_DOWNLOAD_ENDPOINT_AUTH=false
+    volumes:
+      - romm_resources:/romm/resources
+      - romm_redis_data:/redis-data
+      - /opt/romm/library:/romm/library:z
+      - /opt/romm/assets:/romm/assets:z
+      - /opt/romm/config:/romm/config
+    networks:
+      - RomM-Network
+    restart: always
+    depends_on:
+      RomM-DB:
+        condition: service_healthy
+        restart: true
+
+  RomM-DB:
+    image: mariadb:latest
+    container_name: RomM-DB
+    environment:
+      - MARIADB_DATABASE=romm
+      - MARIADB_USER=romm-user
+      - MARIADB_PASSWORD=
+      - MARIADB_ROOT_PASSWORD=
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - RomM-Network
+    restart: always
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 30s
+      start_interval: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  RomM-Network:
+
+volumes:
+  mysql_data:
+  romm_resources:
+  romm_redis_data:name: RomM-Suite

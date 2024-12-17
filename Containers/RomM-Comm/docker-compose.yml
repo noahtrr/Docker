@@ -1,0 +1,31 @@
+name: RomM-Comm
+services:
+  RomM-Comm:
+    image: idiosync000/romm-comm:latest
+    container_name: RomM-Comm
+    environment:
+      - TOKEN= #Bot token
+      - GUILD= #Guild token
+      - API_URL= http://RomM:8080
+      - USER= #RomM User
+      - PASS= #RomM Password
+      - DOMAIN= #RomM Domain
+      - SYNC_RATE=3600
+      - REQUESTS_ENABLED=TRUE
+      - IGDB_CLIENT_ID=
+      - IGDB_CLIENT_SECRET=
+      - ENABLE_USER_MANAGER=TRUE
+      - AUTO_REGISTER_ROLE_ID=
+      - UPDATE_VOICE_NAMES=false
+      - CHANNEL_ID=
+      - SHOW_API_SUCCESS=true
+      - CACHE_TTL=3900
+      - API_TIMEOUT=10
+    volumes:
+      - /opt/romm-sync/data:/app/data
+    networks:
+      - RomM-Network
+    restart: always
+
+networks:
+  RomM-Network:

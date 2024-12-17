@@ -1,4 +1,4 @@
-name: RomM-Stack
+name: RomM
 services:
   RomM:
     image: rommapp/romm:latest
