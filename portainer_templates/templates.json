@@ -299,10 +299,10 @@
         },
         {
             "type": 1,
-            "title": "nginx-proxy-manager",
+            "title": "Nginx Proxy Manager",
             "description": "Expose web services on your network · Free SSL with Let's Encrypt · Designed with security in mind · Perfect for home networks",
             "image": "jc21/nginx-proxy-manager:latest",
-            "name": "Nginx Proxy Manager",
+            "name": "nginx-proxy-manager",
             "logo": "https://nginxproxymanager.com/logo.svg",
             "volumes": [
                 {
