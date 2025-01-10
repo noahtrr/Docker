@@ -358,7 +358,7 @@
                     "binds": "/"
                 }
             ],
-            "ports": "85:80/tcp",
+            "ports": ["85:80/tcp"],
             "restart_policy": "unless-stopped",
             "hostname": "vaultwarden",
             "note": "<a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener noreferrer'>Link to the Vaultwarden Project </a>",
