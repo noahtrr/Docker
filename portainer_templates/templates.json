@@ -131,7 +131,7 @@
             "note": "<a href='https://github.com/rommapp/romm/' target='_blank' rel='noopener noreferrer'>Link to the RomM Project </a>"
         },
         {
-            "type": 3,
+            "type": 1,
             "title": "RomM-Comm",
             "description": "A Discord bot that integrates with the RomM API to provide information about your ROM collection and conrol RomM from Discord.",
             "image": "idiosync000/romm-comm:latest",
@@ -267,7 +267,8 @@
             ],
             "restart_policy": "unless-stopped",
             "hostname": "romm-comm",
-            "note": "<a href='https://github.com/idio-sync/romm-comm/' target='_blank' rel='noopener noreferrer'>Link to the RomM Comm Project </a>"
+            "note": "<a href='https://github.com/idio-sync/romm-comm/' target='_blank' rel='noopener noreferrer'>Link to the RomM Comm Project </a>",
+            "categories": ["Games", "Discord"]
         }
     ]
 }
