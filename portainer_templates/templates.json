@@ -9,7 +9,7 @@
                 "stackfile": "examples/docker-compose.example.yml"
             },
             "description": "Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
-            "name": "RomM",
+            "name": "romm",
             "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-dark.svg",
             "env": [
                 {
