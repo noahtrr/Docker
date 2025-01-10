@@ -40,7 +40,8 @@
                     "default": "romm",
                     "preset": false
                 }
-            ]
+            ],
+            "categories": ["Games", "Organizing"]
         }
     ]
 }
