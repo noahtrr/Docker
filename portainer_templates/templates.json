@@ -285,7 +285,6 @@
                     "default": "10"
                 }
             ],
-            "network": "host",
             "volumes": [
                 {
                     "container": "/app/data",
@@ -337,6 +336,33 @@
             "hostname": "uptime-kuma",
             "note": "<a href='https://github.com/louislam/uptime-kuma' target='_blank' rel='noopener noreferrer'>Link to the Uptime Kuma Project </a>",
             "categories": ["Networking", "Monitoring"]
+        },
+        {
+            "type": 1,
+            "title": "Vaultwarden",
+            "description": "An alternative server implementation of the Bitwarden Client API, written in Rust and compatible with official Bitwarden clients.",
+            "image": "vaultwarden/server:latest",
+            "name": "vaultwarden",
+            "logo": "https://github.com/dani-garcia/vaultwarden/raw/main/resources/vaultwarden-logo-auto.svg",
+            "env": [
+                {
+                    "name": "DOMAIN",
+                    "label": "Domain",
+                    "description": "Your Vaultwardens FQDN",
+                    "default": "https://vw.domain.tld"
+                }
+            ],
+            "volumes": [
+                {
+                    "container": "/data/",
+                    "binds": "/"
+                }
+            ],
+            "ports": "85:80/tcp",
+            "restart_policy": "unless-stopped",
+            "hostname": "vaultwarden",
+            "note": "<a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener noreferrer'>Link to the Vaultwarden Project </a>",
+            "categories": ["Security", "Organizing"]
         }
     ]
 }
