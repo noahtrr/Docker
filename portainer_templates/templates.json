@@ -6,7 +6,9 @@
             "title": "RomM",
             "description": "Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
             "image": "rommapp/romm:latest",
-            "administrator-only": false
+            "administrator-only": false,
+            "name": "RomM",
+            "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-dark.svg"
         }
     ]
 }
