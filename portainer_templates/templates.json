@@ -61,43 +61,43 @@
                 {
                     "name": "ROMM_AUTH_SECRET_KEY",
                     "label": "RomM Auth Secret Key",
-                    "description": "",
-                    "default": "",
+                    "description": "Generate a key with `openssl rand -hex 32`",
+                    "default": "your generated key",
                     "preset": false
                 },
                 {
                     "name": "IGDB_CLIENT_ID",
                     "label": "IGDB Client ID",
-                    "description": "",
-                    "default": "",
+                    "description": "Generate an ID and SECRET in IGDB",
+                    "default": "client id",
                     "preset": false
                 },
                 {
                     "name": "IGDB_CLIENT_SECRET",
                     "label": "IGDB Client Secret",
-                    "description": "",
-                    "default": "",
+                    "description": "https://api-docs.igdb.com/#account-creation",
+                    "default": "client secret",
                     "preset": false
                 },
                 {
                     "name": "MOBYGAMES_API_KEY",
                     "label": "Mobygames API Key",
-                    "description": "",
-                    "default": "",
+                    "description": "https://www.mobygames.com/info/api/",
+                    "default": "api key",
                     "preset": false
                 },
                 {
                     "name": "STEAMGRIDDB_API_KEY",
                     "label": "StreamgridDB API Key",
-                    "description": "",
-                    "default": "",
+                    "description": "https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb",
+                    "default": "api key",
                     "preset": false
                 },
                 {
                     "name": "PORT",
                     "label": "Port",
-                    "description": "",
-                    "default": "",
+                    "description": "The Port where the container should be published on the host.",
+                    "default": "8080",
                     "preset": false
                 },
                 {
@@ -108,21 +108,21 @@
                 {
                     "name": "library",
                     "label": "Library Path",
-                    "description": "The path on your host machine where the library should be.",
+                    "description": "Your game library. Check https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.",
                     "default": "/path/to/library",
                     "preset": false
                 },
                 {
                     "name": "assets",
                     "label": "Asset Path",
-                    "description": "The path on your host machine where the assets should be placed.",
+                    "description": "Uploaded saves, states, etc.",
                     "default": "/path/to/assets",
                     "preset": false
                 },
                 {
                     "name": "config",
                     "label": "Config Path",
-                    "description": "The path on your host machine where the config is.",
+                    "description": "Path where config.yml is stored.",
                     "default": "/path/to/config",
                     "preset": false
                 }
