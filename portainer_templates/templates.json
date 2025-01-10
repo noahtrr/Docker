@@ -319,6 +319,24 @@
             "hostname": "nginx-proxy-manager",
             "note": "<a href='https://github.com/NginxProxyManager/nginx-proxy-manager' target='_blank' rel='noopener noreferrer'>Link to the NPM Project </a>",
             "categories": ["Networking", "Proxy"]
+        },
+        {
+            "type": 1,
+            "title": "Uptime Kuma",
+            "description": "A self-hosted monitoring tool",
+            "image": "louislam/uptime-kuma:1",
+            "name": "uptime-kuma",
+            "logo": "https://uptime.kuma.pet/img/icon.svg",
+            "volumes": [
+                {
+                    "container": "/app/data"
+                }
+            ],
+            "ports": ["3001:3001/tcp"],
+            "restart_policy": "always",
+            "hostname": "uptime-kuma",
+            "note": "<a href='https://github.com/louislam/uptime-kuma' target='_blank' rel='noopener noreferrer'>Link to the Uptime Kuma Project </a>",
+            "categories": ["Networking", "Monitoring"]
         }
     ]
 }
