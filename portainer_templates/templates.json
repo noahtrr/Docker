@@ -2,13 +2,24 @@
     "version": "2",
     "templates": [
         {
-            "type": 1,
+            "type": 3,
             "title": "RomM",
+            "repository": {
+                "url": "https://github.com/rommapp/romm",
+                "stackfile": "examples/docker-compose.example.yml"
+            },
             "description": "Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
-            "image": "rommapp/romm:latest",
-            "administrator-only": false,
             "name": "RomM",
-            "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-dark.svg"
+            "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-dark.svg",
+            "env": [
+                {
+                    "name": "DB-HOST",
+                    "label": "Database Container Hostname",
+                    "description": "The Docker Containers Hostname for the RomM Database.",
+                    "default": "romm-db",
+                    "preset": true
+                }
+            ]
         }
     ]
 }
