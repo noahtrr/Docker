@@ -13,26 +13,9 @@
             "logo": "https://raw.githubusercontent.com/rommapp/romm/refs/heads/release/.github/resources/isotipo.svg",
             "env": [
                 {
-                    "name": "MARIADB_ROOT_PASSWORD",
-                    "label": "MariaDB Root Password",
-                    "default": "db-root-password",
-                    "description": "The databases root password. Use a unique, secure password."
-                },
-                {
-                    "name": "MARIADB_DATABASE",
-                    "default": "romm-db",
-                    "preset": true
-                },
-                {
-                    "name": "MARIADB_USER",
-                    "default": "romm-user",
-                    "preset": true
-                },
-                {
-                    "name": "DB_PASSWD",
-                    "label": "Database password",
-                    "description": "The databases password. Use a unique, secure password",
-                    "default": "db-password"
+                    "name": "DB_ROOT_PASSWORD",
+                    "label": "Database root password",
+                    "description": "Use a unique, secure password"
                 },
                 {
                     "name": "DB_HOST",
@@ -41,53 +24,48 @@
                 },
                 {
                     "name": "DB_NAME",
-                    "default": "romm",
-                    "preset": true
+                    "label": "Database name",
+                    "default": "romm-db"
                 },
                 {
                     "name": "DB_USER",
-                    "default": "romm-user",
-                    "preset": true
+                    "label": "Database user",
+                    "default": "romm-user"
                 },
                 {
                     "name": "DB_PASSWD",
-                    "label": "Database Password RomM Entry",
-                    "preset": true
+                    "label": "Database password",
+                    "description": "Use a unique, secure password"
                 },
                 {
                     "name": "ROMM_AUTH_SECRET_KEY",
                     "label": "Auth Secret Key",
-                    "description": "Generate a key with `openssl rand -hex 32`",
-                    "default": "your generated key"
+                    "description": "Generate a key with `openssl rand -hex 32`"
                 },
                 {
                     "name": "IGDB_CLIENT_ID",
                     "label": "IGDB Client ID",
-                    "description": "Generate an ID and SECRET in IGDB",
-                    "default": "client id"
+                    "description": "Generate an ID and SECRET in IGDB"
                 },
                 {
                     "name": "IGDB_CLIENT_SECRET",
                     "label": "IGDB Client Secret",
-                    "description": "https://api-docs.igdb.com/#account-creation",
-                    "default": "client secret"
+                    "description": "https://api-docs.igdb.com/#account-creation"
                 },
                 {
                     "name": "MOBYGAMES_API_KEY",
                     "label": "Mobygames API Key",
-                    "description": "https://www.mobygames.com/info/api/",
-                    "default": "api key"
+                    "description": "https://www.mobygames.com/info/api/"
                 },
                 {
                     "name": "STEAMGRIDDB_API_KEY",
                     "label": "StreamgridDB API Key",
-                    "description": "https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb",
-                    "default": "api key"
+                    "description": "https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
                 },
                 {
                     "name": "PORT",
                     "label": "Port",
-                    "description": "The port RomM will be available on.",
+                    "description": "The port RomM will be available on",
                     "default": "8080"
                 },
                 {
@@ -115,7 +93,7 @@
                 }
             ],
             "categories": ["Games", "Organizing"],
-            "note": "<a href='https://github.com/rommapp/romm/' target='_blank' rel='noopener noreferrer'>The RomM Project on GitHub</a>"
+            "note": "<a href='https://github.com/rommapp/romm/' target='_blank' rel='noopener'>The RomM Project on GitHub</a>"
         },
         {
             "type": 1,
