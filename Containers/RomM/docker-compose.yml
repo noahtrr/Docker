@@ -1,46 +1,49 @@
-name: RomM-Stack
+version: "3"
+
+volumes:
+  mysql_data:
+  romm_resources:
+  romm_redis_data:
+
 services:
-  RomM:
+  romm:
     image: rommapp/romm:latest
-    container_name: RomM
-    ports:
-      - 8080:8080
+    container_name: romm
+    restart: unless-stopped
     environment:
-      - DB_HOST=RomM-DB
-      - DB_NAME=romm
-      - DB_USER=romm-user
-      - DB_PASSWD=
-      - ROMM_AUTH_SECRET_KEY=
-      - IGDB_CLIENT_ID=
-      - IGDB_CLIENT_SECRET=
-      - DISABLE_DOWNLOAD_ENDPOINT_AUTH=false
+      - DB_HOST=romm-db
+      - DB_NAME=romm # Should match MARIADB_DATABASE in mariadb
+      - DB_USER=romm-user # Should match MARIADB_USER in mariadb
+      - DB_PASSWD= # Should match MARIADB_PASSWORD in mariadb
+      - ROMM_AUTH_SECRET_KEY= # Generate a key with `openssl rand -hex 32`
+      - IGDB_CLIENT_ID= # Generate an ID and SECRET in IGDB
+      - IGDB_CLIENT_SECRET= # https://api-docs.igdb.com/#account-creation
+      - MOBYGAMES_API_KEY= # https://www.mobygames.com/info/api/
+      - STEAMGRIDDB_API_KEY= # https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
     volumes:
-      - romm_resources:/romm/resources
-      - romm_redis_data:/redis-data
-      - /opt/romm/library:/romm/library:z
-      - /opt/romm/assets:/romm/assets:z
-      - /opt/romm/config:/romm/config
-    networks:
-      - RomM-Network
-    restart: always
+      - romm_resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
+      - romm_redis_data:/redis-data # Cached data for background tasks
+      - /path/to/library:/romm/library # Your game library. Check https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.
+      - /path/to/assets:/romm/assets # Uploaded saves, states, etc.
+      - /path/to/config:/romm/config # Path where config.yml is stored
+    ports:
+      - 80:8080
     depends_on:
-      RomM-DB:
+      romm-db:
         condition: service_healthy
         restart: true
 
-  RomM-DB:
+  romm-db:
     image: mariadb:latest
-    container_name: RomM-DB
+    container_name: romm-db
+    restart: unless-stopped
     environment:
+      - MARIADB_ROOT_PASSWORD= # Use a unique, secure password
       - MARIADB_DATABASE=romm
       - MARIADB_USER=romm-user
       - MARIADB_PASSWORD=
-      - MARIADB_ROOT_PASSWORD=
     volumes:
       - mysql_data:/var/lib/mysql
-    networks:
-      - RomM-Network
-    restart: always
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       start_period: 30s
@@ -48,11 +51,3 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
-networks:
-  RomM-Network:
-
-volumes:
-  mysql_data:
-  romm_resources:
-  romm_redis_data:name: RomM-Suite
