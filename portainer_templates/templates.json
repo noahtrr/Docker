@@ -6,7 +6,7 @@
             "title": "RomM",
             "repository": {
                 "url": "https://github.com/noahtrr/Docker",
-                "stackfile": "Containers/RomM/docker-compose.yml"
+                "stackfile": "Containers/RomM/docker-stack.yml"
             },
             "description": "Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
             "name": "romm",
