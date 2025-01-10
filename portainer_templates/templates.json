@@ -139,130 +139,157 @@
             "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-mono-dark.svg",
             "env": [
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "TOKEN",
+                    "label": "Token",
+                    "description": "Your Discord bot token",
+                    "default": "your_discord_bot_token"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "GUILD",
+                    "label": "Guild ID",
+                    "description": "Discord server (guild) ID",
+                    "default": "your_guild_id"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "API_URL",
+                    "label": "Base URL for RomM Instance",
+                    "description": "Base URL for local Romm instance (http://ip:port)",
+                    "default": "your_api_base_url"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "USER",
+                    "label": "User",
+                    "description": "API authentication username",
+                    "default": "api_username"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "PASS",
+                    "label": "Pass",
+                    "description": "API authentication password",
+                    "default": "api_password"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "DOMAIN",
+                    "label": "Domain",
+                    "description": "Website domain for any download links, can use local ip/port if not exposing RomM to the internet (default: 'No website configured')",
+                    "default": "your_website_domain"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "SYNC_RATE",
+                    "label": "Sync rate",
+                    "description": "How often to sync with API in seconds (default: 3600)",
+                    "default": "3600"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "REQUESTS_ENABLED",
+                    "label": "Requests enabled",
+                    "description": "Enable request commands (default: true)",
+                    "select": [
+                        {
+                            "text": "True",
+                            "value": "true",
+                            "default": true
+                        },
+                        {
+                            "text": "False",
+                            "value": "false",
+                            "default": false
+                        }
+                    ]
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "IGDB_CLIENT_ID",
+                    "label": "IGDB client ID",
+                    "description": "IGDB login info for requests metadata (can be the same one used in RomM)",
+                    "default": "your_client_id"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "IGDB_CLIENT_SECRET",
+                    "label": "IGDB client secret",
+                    "description": "IGDB login info for requests metadata (can be the same one used in RomM)",
+                    "default": "your_client_secret"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "ENABLE_USER_MANAGER",
+                    "label": "Enable user manager",
+                    "description": "Enables user manager module (default: true)",
+                    "select": [
+                        {
+                            "text": "True",
+                            "value": "true",
+                            "default": true
+                        },
+                        {
+                            "text": "False",
+                            "value": "false",
+                            "default": false
+                        }
+                    ]
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "AUTO_REGISTER_ROLE_ID",
+                    "label": "Auto register role ID",
+                    "description": "Discord role ID used for linking Discord users to RomM users and registering new RomM users if granted to Discord user (if user manager enabled)",
+                    "default": "romm_users_role_id"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "UPDATE_VOICE_NAMES",
+                    "label": "Update voice names",
+                    "description": "Enable/disable voice channel stats (default: true)",
+                    "select": [
+                        {
+                            "text": "True",
+                            "value": "true",
+                            "default": true
+                        },
+                        {
+                            "text": "False",
+                            "value": "false",
+                            "default": false
+                        }
+                    ]
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "CHANNEL_ID",
+                    "label": "Channel ID",
+                    "description": "Channel ID for API sync result and user manager notifications to be sent to (if enabled above) and user manager log messages",
+                    "default": "your_channel_id"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "SHOW_API_SUCCESS",
+                    "label": "Show API Success",
+                    "description": "Show API sync results and error messages in Discord (default: false)",
+                    "select": [
+                        {
+                            "text": "True",
+                            "value": "true",
+                            "default": false
+                        },
+                        {
+                            "text": "False",
+                            "value": "false",
+                            "default": true
+                        }
+                    ]
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "name": "CACHE_TTL",
+                    "label": "Cache Time To Live",
+                    "description": "Cache time-to-live in seconds (default: 3900)",
+                    "default": "3900"
                 },
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
-                },
+                    "name": "API_TIMEOUT",
+                    "label": "API Timeout",
+                    "description": "API request timeout in seconds (default: 10)",
+                    "default": "10"
+                }
+            ],
+            "network": "host",
+            "volumes": [
                 {
-                    "name": "",
-                    "label": "",
-                    "description": "",
-                    "default": "",
-                    "preset": false
+                    "container": "/app/data",
+                    "bind": ""
                 }
             ],
             "restart_policy": "unless-stopped",
