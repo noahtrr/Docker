@@ -8,7 +8,7 @@
                 "url": "https://github.com/noahtrr/Docker",
                 "stackfile": "Containers/RomM/docker-stack.yml"
             },
-            "description": "Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
+            "description": "Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators. https://github.com/rommapp/romm",
             "name": "romm",
             "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-dark.svg",
             "env": [
@@ -56,6 +56,74 @@
                     "label": "Database Password RomM Entry",
                     "description": "The databases password, this entry is for the RomM configuration. (Enter the password you put for the MariaDB Password here.)",
                     "default": "db-password",
+                    "preset": false
+                },
+                {
+                    "name": "ROMM_AUTH_SECRET_KEY",
+                    "label": "RomM Auth Secret Key",
+                    "description": "",
+                    "default": "",
+                    "preset": false
+                },
+                {
+                    "name": "IGDB_CLIENT_ID",
+                    "label": "IGDB Client ID",
+                    "description": "",
+                    "default": "",
+                    "preset": false
+                },
+                {
+                    "name": "IGDB_CLIENT_SECRET",
+                    "label": "IGDB Client Secret",
+                    "description": "",
+                    "default": "",
+                    "preset": false
+                },
+                {
+                    "name": "MOBYGAMES_API_KEY",
+                    "label": "Mobygames API Key",
+                    "description": "",
+                    "default": "",
+                    "preset": false
+                },
+                {
+                    "name": "STEAMGRIDDB_API_KEY",
+                    "label": "StreamgridDB API Key",
+                    "description": "",
+                    "default": "",
+                    "preset": false
+                },
+                {
+                    "name": "PORT",
+                    "label": "Port",
+                    "description": "",
+                    "default": "",
+                    "preset": false
+                },
+                {
+                    "name": "PORT_INTERNAL",
+                    "default": "8080",
+                    "preset": true
+                },
+                {
+                    "name": "library",
+                    "label": "Library Path",
+                    "description": "The path on your host machine where the library should be.",
+                    "default": "/path/to/library",
+                    "preset": false
+                },
+                {
+                    "name": "assets",
+                    "label": "Asset Path",
+                    "description": "The path on your host machine where the assets should be placed.",
+                    "default": "/path/to/assets",
+                    "preset": false
+                },
+                {
+                    "name": "config",
+                    "label": "Config Path",
+                    "description": "The path on your host machine where the config is.",
+                    "default": "/path/to/config",
                     "preset": false
                 }
             ],
