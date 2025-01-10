@@ -53,7 +53,7 @@
                 },
                 {
                     "name": "DB_PASSWD",
-                    "label": "Database Password",
+                    "label": "Database Password RomM Entry",
                     "description": "The databases password, this entry is for the RomM configuration. (Enter the password you put for the MariaDB Password here.)",
                     "default": "db-password",
                     "preset": false
