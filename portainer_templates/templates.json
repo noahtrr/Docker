@@ -296,6 +296,29 @@
             "hostname": "romm-comm",
             "note": "<a href='https://github.com/idio-sync/romm-comm/' target='_blank' rel='noopener noreferrer'>Link to the RomM Comm Project </a>",
             "categories": ["Games", "Discord"]
+        },
+        {
+            "type": 1,
+            "title": "nginx-proxy-manager",
+            "description": "Expose web services on your network · Free SSL with Let's Encrypt · Designed with security in mind · Perfect for home networks",
+            "image": "jc21/nginx-proxy-manager:latest",
+            "name": "Nginx Proxy Manager",
+            "logo": "https://nginxproxymanager.com/logo.svg",
+            "volumes": [
+                {
+                    "container": "/data",
+                    "bind": "/"
+                },
+                {
+                    "container": "/etc/letsencrypt",
+                    "bind": "/"
+                }
+            ],
+            "ports": ["80:80/tcp", "443:443/tcp", "81:81/tcp"],
+            "restart_policy": "unless-stopped",
+            "hostname": "nginx-proxy-manager",
+            "note": "<a href='https://github.com/NginxProxyManager/nginx-proxy-manager' target='_blank' rel='noopener noreferrer'>Link to the NPM Project </a>",
+            "categories": ["Networking", "Proxy"]
         }
     ]
 }
