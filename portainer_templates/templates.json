@@ -15,7 +15,7 @@
                 {
                     "name": "MARIADB_ROOT_PASSWORD",
                     "default": "MARIADB_ROOT_PASSWORD",
-                    "preset": true
+                    "description": "The databases root password. Use a unique, secure password."
                 },
                 {
                     "name": "MARIADB_DATABASE",
