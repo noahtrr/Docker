@@ -16,8 +16,8 @@
                     "name": "MARIADB_ROOT_PASSWORD",
                     "label": "Database root password",
                     "description": "The databases root password.",
-                    "default": "db-root-password",
-                    "preset": false
+                    "default": "DB_PASSWD",
+                    "preset": true
                 },
                 {
                     "name": "MARIADB_DATABASE",
@@ -55,8 +55,8 @@
                     "name": "DB_PASSWD",
                     "label": "Database Password RomM Entry",
                     "description": "The databases password, this entry is for the RomM configuration. (Enter the password you put for the MariaDB Password here.)",
-                    "default": "db-password",
-                    "preset": false
+                    "default": "DB_PASSWD",
+                    "preset": true
                 },
                 {
                     "name": "ROMM_AUTH_SECRET_KEY",
