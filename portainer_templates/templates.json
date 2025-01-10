@@ -143,126 +143,126 @@
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 },
                 {
                     "name": "",
                     "label": "",
                     "description": "",
                     "default": "",
-                    "preset": ""
+                    "preset": "false"
                 }
             ],
             "restart_policy": "unless-stopped",
