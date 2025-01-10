@@ -4,28 +4,23 @@ services:
     image: idiosync000/romm-comm:latest
     container_name: RomM-Comm
     environment:
-      - TOKEN= #Bot token
-      - GUILD= #Guild token
-      - API_URL= http://RomM:8080
-      - USER= #RomM User
-      - PASS= #RomM Password
-      - DOMAIN= #RomM Domain
-      - SYNC_RATE=3600
-      - REQUESTS_ENABLED=TRUE
-      - IGDB_CLIENT_ID=
-      - IGDB_CLIENT_SECRET=
-      - ENABLE_USER_MANAGER=TRUE
-      - AUTO_REGISTER_ROLE_ID=
-      - UPDATE_VOICE_NAMES=false
-      - CHANNEL_ID=
-      - SHOW_API_SUCCESS=true
-      - CACHE_TTL=3900
-      - API_TIMEOUT=10
+      - TOKEN=${TOKEN} #Bot token
+      - GUILD=${GUILD} #Guild token
+      - API_URL=${API_URL}
+      - USER=${USER} #RomM User
+      - PASS=${PASS} #RomM Password
+      - DOMAIN=${DOMAIN} #RomM Domain
+      - SYNC_RATE=${SYNC_RATE}
+      - REQUESTS_ENABLED=${REQUESTS_ENABLED}
+      - IGDB_CLIENT_ID=${IGDB_CLIENT_ID}
+      - IGDB_CLIENT_SECRET=${IGDB_CLIENT_SECRET}
+      - ENABLE_USER_MANAGER=${ENABLE_USER_MANAGER}
+      - AUTO_REGISTER_ROLE_ID=${AUTO_REGISTER_ROLE_ID}
+      - UPDATE_VOICE_NAMES=${UPDATE_VOICE_NAMES}
+      - CHANNEL_ID=${CHANNEL_ID}
+      - SHOW_API_SUCCESS=${SHOW_API_SUCCESS}
+      - CACHE_TTL=${CACHE_TTL}
+      - API_TIMEOUT=${API_TIMEOUT}
     volumes:
-      - /opt/romm-sync/data:/app/data
-    networks:
-      - RomM-Network
-    restart: always
-
-networks:
-  RomM-Network:
+      - ${DATADIR}:/app/data
+    restart: unless-stopped
