@@ -19,22 +19,18 @@
                 },
                 {
                     "name": "DB_HOST",
-                    "label": "Database host",
-                    "description": "The MariaDB container name",
                     "default": "romm-db",
                     "preset": true
                 },
                 {
                     "name": "DB_NAME",
                     "label": "Database name",
-                    "default": "romm-db",
-                    "preset": true
+                    "default": "romm-db"
                 },
                 {
                     "name": "DB_USER",
                     "label": "Database user",
-                    "default": "romm-user",
-                    "preset": true
+                    "default": "romm-user"
                 },
                 {
                     "name": "DB_PASSWD",
@@ -254,7 +250,6 @@
                     "default": "10"
                 }
             ],
-            "network": "host",
             "volumes": [
                 {
                     "container": "/app/data",
@@ -288,6 +283,51 @@
             "hostname": "nginx-proxy-manager",
             "note": "<a href='https://github.com/NginxProxyManager/nginx-proxy-manager' target='_blank' rel='noopener noreferrer'>Link to the NPM Project </a>",
             "categories": ["Networking", "Proxy"]
+        },
+        {
+            "type": 1,
+            "title": "Uptime Kuma",
+            "description": "A self-hosted monitoring tool",
+            "image": "louislam/uptime-kuma:1",
+            "name": "uptime-kuma",
+            "logo": "https://uptime.kuma.pet/img/icon.svg",
+            "volumes": [
+                {
+                    "container": "/app/data"
+                }
+            ],
+            "ports": ["3001:3001/tcp"],
+            "restart_policy": "always",
+            "hostname": "uptime-kuma",
+            "note": "<a href='https://github.com/louislam/uptime-kuma' target='_blank' rel='noopener noreferrer'>Link to the Uptime Kuma Project </a>",
+            "categories": ["Networking", "Monitoring"]
+        },
+        {
+            "type": 1,
+            "title": "Vaultwarden",
+            "description": "An alternative server implementation of the Bitwarden Client API, written in Rust and compatible with official Bitwarden clients.",
+            "image": "vaultwarden/server:latest",
+            "name": "vaultwarden",
+            "logo": "https://github.com/dani-garcia/vaultwarden/raw/main/resources/vaultwarden-logo-auto.svg",
+            "env": [
+                {
+                    "name": "DOMAIN",
+                    "label": "Domain",
+                    "description": "Your Vaultwardens FQDN",
+                    "default": "https://vw.domain.tld"
+                }
+            ],
+            "volumes": [
+                {
+                    "container": "/data/",
+                    "binds": "/"
+                }
+            ],
+            "ports": ["85:80/tcp"],
+            "restart_policy": "unless-stopped",
+            "hostname": "vaultwarden",
+            "note": "<a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener noreferrer'>Link to the Vaultwarden Project </a>",
+            "categories": ["Security", "Organizing"]
         }
     ]
 }
