@@ -17,7 +17,7 @@
                     "label": "Database root password",
                     "description": "The databases root password.",
                     "default": "db-root-password",
-                    "preset": true
+                    "preset": false
                 },
                 {
                     "name": "MARIADB_DATABASE",
