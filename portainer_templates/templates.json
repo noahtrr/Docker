@@ -13,11 +13,32 @@
             "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-dark.svg",
             "env": [
                 {
-                    "name": "DB-HOST",
-                    "label": "Database Container Hostname",
-                    "description": "The Docker Containers Hostname for the RomM Database.",
+                    "name": "DB_HOST",
+                    "label": "Database container hostname",
+                    "description": "The docker containers hostname for the RomM database.",
                     "default": "romm-db",
                     "preset": true
+                },
+                {
+                    "name": "DB_NAME",
+                    "label": "Database Name",
+                    "description": "The databases name.",
+                    "default": "romm",
+                    "preset": true
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database Username",
+                    "description": "The databases username.",
+                    "default": "romm-user",
+                    "preset": true
+                },
+                {
+                    "name": "DB_PASSWD",
+                    "label": "Database Password RomM",
+                    "description": "The databases password, this entry is for the RomM configuration.",
+                    "default": "romm",
+                    "preset": false
                 }
             ]
         }
