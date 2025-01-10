@@ -131,7 +131,143 @@
             "note": "<a href='https://github.com/rommapp/romm/' target='_blank' rel='noopener noreferrer'>Link to the RomM Project </a>"
         },
         {
-            
+            "type": 3,
+            "title": "RomM-Comm",
+            "description": "A Discord bot that integrates with the RomM API to provide information about your ROM collection and conrol RomM from Discord.",
+            "image": "idiosync000/romm-comm:latest",
+            "name": "romm-comm",
+            "logo": "https://romm.app/_ipx/q_80/images/blocks/logos/romm-mono-dark.svg",
+            "env": [
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                },
+                {
+                    "name": "",
+                    "label": "",
+                    "description": "",
+                    "default": "",
+                    "preset": ""
+                }
+            ],
+            "restart_policy": "unless-stopped",
+            "hostname": "romm-comm",
+            "note": "<a href='https://github.com/idio-sync/romm-comm/' target='_blank' rel='noopener noreferrer'>Link to the RomM Comm Project </a>"
         }
     ]
 }
