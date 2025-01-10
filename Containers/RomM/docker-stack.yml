@@ -31,9 +31,9 @@ services:
     container_name: romm-db
     restart: unless-stopped
     environment:
-      - MARIADB_ROOT_PASSWORD=${DB_PASSWD} # Use a unique, secure password
-      - MARIADB_DATABASE=${MARIADB_DATABASE}
-      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD} # Use a unique, secure password
+      - MARIADB_DATABASE=${DB_NAME}
+      - MARIADB_USER=${DB_USER}
       - MARIADB_PASSWORD=${DB_PASSWD}
     volumes:
       - mysql_data:/var/lib/mysql
